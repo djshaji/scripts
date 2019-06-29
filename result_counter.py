@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys
+import sys, argparse
 
 PASS_MARKS = 29
 # PASS_MARKS = 14
@@ -76,5 +76,10 @@ def print_result (marks):
         
 
 if __name__ == "__main__":
-    marks = count (sys.argv [1], sys.argv [2])
+    print ("usage:", sys.argv [0], "filename subject_code min marks");
+    if (len (sys.argv) == 4):
+        PASS_MARKS = int (sys.argv [3])
+    
+    # marks = count (sys.argv [1], sys.argv [2])
+    marks = count (sys.argv [2], sys.argv [1])
     print_result (marks)
